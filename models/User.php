@@ -100,7 +100,7 @@ class User {
     {
         $db = Db::getConnection();
 
-        $sql = 'SELECT * FROM users WHERE id = :id';
+        $sql = 'SELECT id,login FROM users WHERE id = :id';
 
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
